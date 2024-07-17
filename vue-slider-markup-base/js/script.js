@@ -52,7 +52,19 @@ const app = Vue.createApp({
                 }
             ]
         }
+    },
+    methods: {
+        nextImage() {
+            (this.active_image == this.slides.length - 1) ? (this.active_image = 0) : (this.active_image++);
+
+        },
+        prevImage() {
+            (this.active_image == 0) ? (this.active_image = this.slides.length - 1) : (this.active_image--);
+        }
+
+
     }
+
 })
 
 app.mount('#app')
