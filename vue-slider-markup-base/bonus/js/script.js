@@ -1,7 +1,6 @@
 const app = Vue.createApp({
     data() {
         return {
-
             active_image: 0,
             slides: [
                 {
@@ -41,10 +40,13 @@ const app = Vue.createApp({
             (this.active_image == 0) ? (this.active_image = this.slides.length - 1) : (this.active_image--);
         },
         autoScroll() {
-            setInterval(() => {
+            autoScroll = setInterval(() => {
                 this.nextImage();
             }, 3000)
         },
+        stopAutoScroll() {
+            clearInterval(autoScroll);
+        }
 
     }
 

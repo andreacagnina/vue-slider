@@ -19,7 +19,8 @@
                 <div class="col-12">
                     <div class="content slider-wrapper">
                         <div class="item">
-                            <img :src="slides[active_image].image" :alt="slides[active_image].title">
+                            <img :src="slides[active_image].image" :alt="slides[active_image].title"
+                                @mouseover="stopAutoScroll" @mouseleave="autoScroll">
                             <div class="text bg-gray">
                                 <h3>
                                     {{slides[active_image].title}}
