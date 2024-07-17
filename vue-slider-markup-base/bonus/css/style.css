@@ -54,6 +54,11 @@
     object-fit: cover;
 }
 
+.thumb img:hover {
+    cursor: pointer;
+    scale: 80%;
+}
+
 .thumb.active {
     border: 2px solid #ccc;
     opacity: 1;
