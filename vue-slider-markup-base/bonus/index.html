@@ -17,10 +17,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="content slider-wrapper">
+                    <div class="content slider-wrapper" @mouseover="stopAutoScroll" @mouseleave="autoScroll">
                         <div class="item">
-                            <img :src="slides[active_image].image" :alt="slides[active_image].title"
-                                @mouseover="stopAutoScroll" @mouseleave="autoScroll">
+                            <img :src="slides[active_image].image" :alt="slides[active_image].title">
                             <div class="text bg-gray">
                                 <h3>
                                     {{slides[active_image].title}}
@@ -33,7 +32,8 @@
                         <div class="thumbs">
                             <div class="prev" @click="prevImage()"></div>
                             <div class="next" @click="nextImage()"></div>
-                            <div class="thumb" v-for="(elem, i) in slides" :class="active_image == i ? 'active':''">
+                            <div class="thumb" v-for="(elem, i) in slides" :class="active_image == i ? 'active':''"
+                                :key="slides.id" @click="activateImage(i)">
                                 <img :src="elem.image" :alt="'thumb' + elem.title">
                             </div>
                         </div>
@@ -46,7 +46,7 @@
 
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src="./js/script.js"></script>
+    <script src=" ./js/script.js"></script>
 </body>
 
 </html>
